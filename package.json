@@ -1,0 +1,81 @@
+{
+  "name": "vue2-demo",
+  "version": "0.0.1",
+  "description": "Vue 2 tailwind lib boilerplate",
+  "license": "MIT",
+  "repository": "https://github.com/vuthanhbayit/vue2-lib",
+  "homepage": "https://github.com/vuthanhbayit/vue2-lib",
+  "bugs": {
+    "url": "https://github.com/vuthanhbayit/vue2-lib/issues"
+  },
+  "author": {
+    "name": "Vu Thanh Bay",
+    "url": "https://github.com/vuthanhbayit"
+  },
+  "keywords": [
+    "vue2",
+    "lib"
+  ],
+  "main": "dist/demo.umd.js",
+  "browser": "dist/demo.es.js",
+  "module": "dist/demo.es.js",
+  "unpkg": "dist/demo.umd.js",
+  "types": "dist/types/src/index.d.ts",
+  "files": [
+    "dist/*",
+    "src/**/*.vue"
+  ],
+  "scripts": {
+    "serve": "vite --config demo/vite.config.ts --port 3001",
+    "demo:build": "vite --config demo/vite.config.ts build",
+    "demo:preview": "yarn demo:build && vite --config demo/vite.config.ts preview",
+    "prebuild": "rimraf ./dist",
+    "build": "vite build",
+    "lint": "eslint \"./**/*.{js,ts,vue}\"",
+    "pretty": "prettier --write \"./**/*.{js,json,html,scss,ts,vue,yml}\"",
+    "prepublishOnly": "yarn build",
+    "ci": "yarn pretty && yarn lint && yarn demo:build && yarn build"
+  },
+  "sideEffects": false,
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "4.32.0",
+    "@typescript-eslint/parser": "4.32.0",
+    "@vue/compiler-sfc": "3.2.19",
+    "@vue/composition-api": "^1.2.2",
+    "autoprefixer": "^10.3.6",
+    "babel-core": "7.0.0-bridge.0",
+    "eslint": "7.32.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-prettier": "4.0.0",
+    "eslint-plugin-vue": "7.18.0",
+    "postcss": "^8.3.8",
+    "postcss-import": "^14.0.2",
+    "postcss-nested": "^5.0.6",
+    "postcss-nesting": "^8.0.1",
+    "prettier": "2.4.1",
+    "rimraf": "3.0.2",
+    "tailwindcss": "^2.2.16",
+    "typescript": "4.4.3",
+    "vite": "2.5.10",
+    "vite-plugin-dts": "0.8.2",
+    "vite-plugin-vue2": "1.8.2",
+    "vue": "2.6.14",
+    "vue-eslint-parser": "7.11.0",
+    "vue-template-compiler": "2.6.14"
+  },
+  "peerDependencies": {
+    "@vue/composition-api": "^1.0.0",
+    "vue": "^2.0.0 || >=3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@vue/composition-api": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
